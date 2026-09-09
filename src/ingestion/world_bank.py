@@ -77,8 +77,14 @@ if __name__ == "__main__":
 
     df = fetch_all_data()
 
-    print(df.head())
-    print()
-    print(df.tail())
-    print()
-    print(f"Number of observations: {len(df)}")
+    print("\n===========================")
+    print("DOWNLOAD COMPLETE")
+    print("=============================")
+
+    print(f"Total observations: {len(df)}")
+
+    raw_path = "data/raw/world_bank_raw.csv"
+
+    df.to_csv(raw_path, index=False)
+
+    print(f"Raw data saved to: {raw_path}")
